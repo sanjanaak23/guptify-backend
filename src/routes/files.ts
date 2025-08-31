@@ -1,11 +1,10 @@
 import express from 'express';
-import { createClient } from '@supabase/supabase-js';
 import crypto from 'crypto';
 import multer from 'multer';
 import path from 'path';
+import { supabase } from '../lib/supabase';
 
 const router = express.Router();
-const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
 
 // Configure multer for file uploads
 const storage = multer.memoryStorage();

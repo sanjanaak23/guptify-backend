@@ -1,8 +1,8 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { createClient, User } from '@supabase/supabase-js';
+import { User } from '@supabase/supabase-js';
+import { supabase } from '../lib/supabase';
 
 const router = express.Router();
-const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
 
 // Extend Express Request to include `user`
 interface AuthenticatedRequest extends Request {
